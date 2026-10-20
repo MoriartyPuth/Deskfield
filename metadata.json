@@ -1,0 +1,9 @@
+{
+  "uuid": "deskfield@MoriartyPuth.github.io",
+  "name": "Deskfield",
+  "description": "An always-visible search field on your desktop. Type an application name and press Enter to launch it. A configurable keyboard shortcut focuses the field from anywhere.",
+  "shell-version": ["50"],
+  "settings-schema": "org.gnome.shell.extensions.deskfield",
+  "url": "https://github.com/MoriartyPuth/Deskfield",
+  "version-name": "1.0.0"
+}

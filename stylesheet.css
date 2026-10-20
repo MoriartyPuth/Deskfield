@@ -1,0 +1,22 @@
+.deskfield-entry {
+    background-color: rgba(0, 0, 0, 0.45);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 7px 12px;
+    caret-color: #ffffff;
+}
+
+.deskfield-entry:focus {
+    background-color: rgba(0, 0, 0, 0.60);
+    border-color: rgba(255, 255, 255, 0.40);
+}
+
+.deskfield-entry StLabel.hint-text {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.deskfield-icon {
+    icon-size: 16px;
+    color: rgba(255, 255, 255, 0.70);
+}
