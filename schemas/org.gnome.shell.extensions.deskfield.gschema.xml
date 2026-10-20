@@ -3,22 +3,28 @@
   <schema id="org.gnome.shell.extensions.deskfield"
           path="/org/gnome/shell/extensions/deskfield/">
     <key name="position-x" type="d">
-      <default>2.0</default>
+      <default>50.0</default>
       <range min="0.0" max="100.0"/>
-      <summary>Horizontal position</summary>
-      <description>Horizontal position of the field, as a percentage of the monitor width.</description>
+      <summary>Horizontal centre</summary>
+      <description>Horizontal centre of the field, as a percentage of the monitor width.</description>
     </key>
     <key name="position-y" type="d">
-      <default>34.0</default>
+      <default>1.0</default>
       <range min="0.0" max="100.0"/>
-      <summary>Vertical position</summary>
-      <description>Vertical position of the field, as a percentage of the monitor height.</description>
+      <summary>Vertical offset</summary>
+      <description>Distance below the top panel, as a percentage of the monitor height.</description>
     </key>
     <key name="field-width" type="i">
-      <default>300</default>
-      <range min="150" max="800"/>
+      <default>440</default>
+      <range min="200" max="1000"/>
       <summary>Field width</summary>
-      <description>Width of the search field in pixels.</description>
+      <description>Width of the search field and results list, in pixels.</description>
+    </key>
+    <key name="max-results" type="i">
+      <default>8</default>
+      <range min="3" max="20"/>
+      <summary>Maximum results</summary>
+      <description>Greatest number of results shown at once.</description>
     </key>
     <key name="show-icon" type="b">
       <default>true</default>

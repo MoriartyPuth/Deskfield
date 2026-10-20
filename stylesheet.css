@@ -1,14 +1,18 @@
+.deskfield-panel {
+    spacing: 6px;
+}
+
 .deskfield-entry {
-    background-color: rgba(0, 0, 0, 0.45);
+    background-color: rgba(0, 0, 0, 0.55);
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 14px;
-    padding: 7px 12px;
+    padding: 8px 12px;
     caret-color: #ffffff;
 }
 
 .deskfield-entry:focus {
-    background-color: rgba(0, 0, 0, 0.60);
+    background-color: rgba(0, 0, 0, 0.70);
     border-color: rgba(255, 255, 255, 0.40);
 }
 
@@ -19,4 +23,34 @@
 .deskfield-icon {
     icon-size: 16px;
     color: rgba(255, 255, 255, 0.70);
+}
+
+.deskfield-results {
+    background-color: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 6px;
+}
+
+.deskfield-result {
+    border-radius: 10px;
+    padding: 6px 8px;
+}
+
+.deskfield-result:selected {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+.deskfield-result-box {
+    spacing: 10px;
+}
+
+.deskfield-result-name {
+    color: #ffffff;
+    font-size: 13px;
+}
+
+.deskfield-result-description {
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 11px;
 }

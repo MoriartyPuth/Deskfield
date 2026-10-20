@@ -60,23 +60,22 @@ function buildShortcutRow(settings, window) {
     return row;
 }
 
-// The field-width key is an integer, so it is synced by hand rather than bound
-// to the spin row's floating-point value property.
-function buildWidthRow(settings) {
+// Integer keys are synced by hand rather than bound to the spin row's
+// floating-point value property.
+function buildWidthRow(settings, key, title, subtitle, lower, upper, step) {
     const row = new Adw.SpinRow({
-        title: 'Width',
-        subtitle: 'Field width in pixels',
-        adjustment: new Gtk.Adjustment({lower: 150, upper: 800, step_increment: 10}),
+        title,
+        subtitle,
+        adjustment: new Gtk.Adjustment({lower, upper, step_increment: step}),
     });
 
-    row.set_value(settings.get_int('field-width'));
+    row.set_value(settings.get_int(key));
     row.connect('notify::value', () => {
         const value = row.get_value();
-        if (value !== settings.get_int('field-width'))
-            settings.set_int('field-width', value);
+        if (value !== settings.get_int(key))
+            settings.set_int(key, value);
     });
-    settings.connect('changed::field-width',
-        () => row.set_value(settings.get_int('field-width')));
+    settings.connect(`changed::${key}`, () => row.set_value(settings.get_int(key)));
 
     return row;
 }
@@ -88,15 +87,15 @@ export default class DeskfieldPreferences extends ExtensionPreferences {
 
         const position = new Adw.PreferencesGroup({
             title: 'Position',
-            description: 'Where the field sits on the desktop, as a percentage of the primary monitor.',
+            description: 'Where the field sits, as a percentage of the primary monitor.',
         });
         const xRow = new Adw.SpinRow({
-            title: 'Horizontal',
+            title: 'Horizontal centre',
             adjustment: new Gtk.Adjustment({lower: 0, upper: 100, step_increment: 1}),
             digits: 1,
         });
         const yRow = new Adw.SpinRow({
-            title: 'Vertical',
+            title: 'Offset below the top panel',
             adjustment: new Gtk.Adjustment({lower: 0, upper: 100, step_increment: 1}),
             digits: 1,
         });
@@ -108,7 +107,8 @@ export default class DeskfieldPreferences extends ExtensionPreferences {
         const appearance = new Adw.PreferencesGroup({title: 'Appearance'});
         const iconRow = new Adw.SwitchRow({title: 'Show search icon'});
         settings.bind('show-icon', iconRow, 'active', Gio.SettingsBindFlags.DEFAULT);
-        appearance.add(buildWidthRow(settings));
+        appearance.add(buildWidthRow(settings, 'field-width', 'Width', 'Field width in pixels', 200, 1000, 10));
+        appearance.add(buildWidthRow(settings, 'max-results', 'Maximum results', 'Greatest number of results shown', 3, 20, 1));
         appearance.add(iconRow);
 
         const shortcut = new Adw.PreferencesGroup({title: 'Shortcut'});
