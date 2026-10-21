@@ -12,7 +12,7 @@ export default class DeskfieldExtension extends Extension {
         this._settings = this.getSettings();
         this._engine = new SearchEngine();
         this._panel = new DeskfieldPanel(this._settings, this._engine);
-        Main.layoutManager.addChrome(this._panel, {trackFullscreen: true});
+        Main.layoutManager._backgroundGroup.add_child(this._panel);
 
         Main.wm.addKeybinding(
             'focus-shortcut',
@@ -24,7 +24,6 @@ export default class DeskfieldExtension extends Extension {
 
     disable() {
         Main.wm.removeKeybinding('focus-shortcut');
-        Main.layoutManager.removeChrome(this._panel);
         this._panel.destroy();
         this._panel = null;
         this._engine = null;

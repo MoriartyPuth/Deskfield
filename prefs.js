@@ -107,7 +107,7 @@ export default class DeskfieldPreferences extends ExtensionPreferences {
         const appearance = new Adw.PreferencesGroup({title: 'Appearance'});
         const iconRow = new Adw.SwitchRow({title: 'Show search icon'});
         settings.bind('show-icon', iconRow, 'active', Gio.SettingsBindFlags.DEFAULT);
-        appearance.add(buildWidthRow(settings, 'field-width', 'Width', 'Field width in pixels', 200, 1000, 10));
+        appearance.add(buildWidthRow(settings, 'field-width', 'Results width', 'Width of the results list in pixels', 200, 1000, 10));
         appearance.add(buildWidthRow(settings, 'max-results', 'Maximum results', 'Greatest number of results shown', 3, 20, 1));
         appearance.add(iconRow);
 
