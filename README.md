@@ -10,10 +10,12 @@ Firefox and `print` finds the Printers settings panel.
 
 ## Features
 
-- Always-visible search field under the top bar.
+- Always-visible search field, centred under the top bar on the desktop.
+- Looks exactly like the native overview search and follows your system theme.
 - Results from applications and GNOME search providers (Settings, Files, …).
 - Keyboard navigation: type, use <kbd>↑</kbd>/<kbd>↓</kbd>, press <kbd>Enter</kbd> to launch, <kbd>Esc</kbd> to clear.
-- Configurable position, width, result count, search icon, and focus shortcut.
+- Click outside the field to dismiss it.
+- Configurable vertical offset, results width, result count, search icon, and focus shortcut.
 
 ## Requirements
 
@@ -39,9 +41,9 @@ This produces `deskfield@MoriartyPuth.github.io.shell-extension.zip`.
 
 Open the extension's preferences (Extensions app → Deskfield → Settings):
 
-- **Position** — horizontal centre and the offset below the top panel, as a
-  percentage of the primary monitor.
-- **Width** — field and results width in pixels.
+- **Position** — the vertical offset below the top panel, as a percentage of
+  the monitor height. The field is always centred horizontally.
+- **Results width** — width of the results list in pixels.
 - **Maximum results** — how many results to show at once.
 - **Show search icon** — toggle the magnifier icon.
 - **Shortcut** — the key combination that focuses the field.
