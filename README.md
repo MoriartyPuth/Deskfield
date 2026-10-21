@@ -8,6 +8,8 @@ Results come from your installed applications and from GNOME's search providers
 (Settings, Files, and any other app that registers one), so `fire` finds
 Firefox and `print` finds the Printers settings panel.
 
+![Deskfield on the desktop](docs/screenshot.png)
+
 ## Features
 
 - Always-visible search field, centred under the top bar on the desktop.
