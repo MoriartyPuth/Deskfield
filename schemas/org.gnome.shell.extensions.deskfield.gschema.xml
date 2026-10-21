@@ -2,12 +2,6 @@
 <schemalist>
   <schema id="org.gnome.shell.extensions.deskfield"
           path="/org/gnome/shell/extensions/deskfield/">
-    <key name="position-x" type="d">
-      <default>50.0</default>
-      <range min="0.0" max="100.0"/>
-      <summary>Horizontal centre</summary>
-      <description>Horizontal centre of the field, as a percentage of the monitor width.</description>
-    </key>
     <key name="position-y" type="d">
       <default>1.0</default>
       <range min="0.0" max="100.0"/>

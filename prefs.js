@@ -87,21 +87,14 @@ export default class DeskfieldPreferences extends ExtensionPreferences {
 
         const position = new Adw.PreferencesGroup({
             title: 'Position',
-            description: 'Where the field sits, as a percentage of the primary monitor.',
-        });
-        const xRow = new Adw.SpinRow({
-            title: 'Horizontal centre',
-            adjustment: new Gtk.Adjustment({lower: 0, upper: 100, step_increment: 1}),
-            digits: 1,
+            description: 'The field is centred horizontally like the overview search.',
         });
         const yRow = new Adw.SpinRow({
             title: 'Offset below the top panel',
             adjustment: new Gtk.Adjustment({lower: 0, upper: 100, step_increment: 1}),
             digits: 1,
         });
-        settings.bind('position-x', xRow, 'value', Gio.SettingsBindFlags.DEFAULT);
         settings.bind('position-y', yRow, 'value', Gio.SettingsBindFlags.DEFAULT);
-        position.add(xRow);
         position.add(yRow);
 
         const appearance = new Adw.PreferencesGroup({title: 'Appearance'});
